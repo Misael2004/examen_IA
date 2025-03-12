@@ -2,27 +2,27 @@ import pygame
 import random
 import os
 
-# Inicializar pygame
+# Inicializar pygame 22-SISN-2-026
 pygame.init() 
 
-# Configuración de la pantalla
+# Configuración de la pantalla 22-SISN-2-026
 WIDTH, HEIGHT = 400, 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Jump King Infinite")
 
-# Colores
+# Colores 22-SISN-2-026
 BLUE = (135, 206, 250)
 BROWN = (139, 69, 19)
 RED = (255, 0, 0)
 
-# Jugador
+# Jugador 22-SISN-2-026
 player = pygame.Rect(200, 500, 30, 30)
 velocity_y = 0
 gravity = 0.5
 jump_strength = -10
 jumping = False
 
-# Plataformas
+# Plataformas 22-SISN-2-026
 platforms = [pygame.Rect(random.randint(50, 300), HEIGHT - i * 100, 100, 10) for i in range(7)]
 
 clock = pygame.time.Clock()
@@ -40,17 +40,17 @@ while run:
                 velocity_y = jump_strength
                 jumping = True
     
-    # Aplicar gravedad
+    # Aplicar gravedad 22-SISN-2-026
     velocity_y += gravity
     player.y += velocity_y
     
-    # Desplazamiento de pantalla
+    # Desplazamiento de pantalla 22-SISN-2-026
     if player.y < HEIGHT // 2:
         for platform in platforms:
             platform.y += abs(velocity_y)
         score += 1
     
-    # Colisión con plataformas y generación infinita
+    # Colisión con plataformas y generación infinita 22-SISN-2-026
     new_platforms = []
     for platform in platforms:
         pygame.draw.rect(screen, BROWN, platform)
